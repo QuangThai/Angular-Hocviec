@@ -1,0 +1,77 @@
+<form
+    class="form-details"
+    [formGroup]="_feeTypeForm"
+    autocomplete="off"
+    method="POST"
+    (submit)="onSubmit(form)">
+    <button
+        type="button"
+        class="btn-close"
+        [mat-dialog-close]>
+        <mat-icon>close</mat-icon>
+    </button>
+    <h3 class="text-center">Danh mục loại chi phí</h3>
+    <fieldset class="scheduler-border">
+        <legend class="scheduler-border">Thông tin</legend>
+        <div class="control-group">
+            <div style="margin: 10px 0px;">
+                <label>Mã loại phí&nbsp;</label>
+                <input
+                    type="text"
+                    name="ItemFeeTypeID"
+                    style="width: 90px; margin-left: 7px"
+                    formControlName="ItemFeeTypeID"
+                    >
+                <span 
+                class="badge badge-danger" 
+                *ngIf="_feeTypeForm.controls.ItemFeeTypeID.dirty && _feeTypeForm.controls.ItemFeeTypeID.errors?.required">
+                    Vui lòng nhập Mã loại phí
+                </span>
+                    <label>&ensp;Loại phí BHYT&ensp;</label>
+                    <select class="mr-1" style="height: 28px;width: 110px;" (change)="selectChangHandler($event)" > 
+                        <option value=""></option>
+                        <option *ngFor="let item of dataSource" [value]="item.ItemFeeTypeInsID">{{item.ItemFeeTypeID}} | {{item.ItemFeeTypeInsID}}</option>                       
+                    </select>&ensp;
+                    <input
+                        type="text"
+                        name="ItemFeeTypeInsID"
+                    
+                        style="width: 288px;"
+                        formControlName="ItemFeeTypeInsID"
+                        > 
+            </div>
+        </div>
+            <div style="margin: 15px 0px;">
+                <label>Tên loại phí&nbsp;</label>
+                <input
+                    type="text"
+                    name="ItemFeeTypeName"
+                    style="width: 354px; margin-left: 4px;"
+                   formControlName="ItemFeeTypeName">
+                    <label>&ensp;Kí hiệu&ensp;</label>
+                <input
+                    type="text"
+                    name="EnumName"
+                    formControlName="EnumName">
+            </div>
+                <div class="d-flex justify-content-end align-items-center">
+                    <input
+                        type="checkbox"
+                        name="IsInstock"
+                        formControlName="IsInstock">&nbsp;&nbsp;Hàng hóa
+                </div>
+    </fieldset>
+    <div class="button-tab d-flex align-items-center justify-content-center">
+        <button type="submit" mat-raised-button color="warn" [disabled]="_feeTypeForm.invalid" >
+            <mat-icon>save</mat-icon> Lưu
+        </button>  
+        <button type="button" mat-raised-button color="warn" (click)="onResetForm()">
+                <mat-icon>refresh</mat-icon> Reset
+            </button>  
+        <button
+            type="button" type="submit" mat-raised-button color="warn"
+            [mat-dialog-close]>
+            <mat-icon>cancel</mat-icon> Thoát
+        </button>
+    </div>
+</form>

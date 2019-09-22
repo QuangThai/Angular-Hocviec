@@ -1,0 +1,81 @@
+<section id="tabs">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 ">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <span
+                            class="nav-item nav-link active"
+                            id="nav-home-tab"
+                            data-toggle="tab"
+                            href="#"
+                            role="tab"
+                            aria-controls="nav-home"
+                            aria-selected="true">LOẠI CHI PHÍ
+                        </span>
+                    </div>
+                </nav>
+                <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                    <div
+                        class="tab-pane fade show active"
+                        id="nav-home"
+                        role="tabpanel"
+                        aria-labelledby="nav-home-tab">
+                        <mat-toolbar class="toolbarNav">
+                            <button mat-raised-button="mat-raised-button" color="warn" (click)="addFeeTypeItem()">
+                                <mat-icon>add</mat-icon>Thêm
+                            </button>
+                            <button mat-raised-button="mat-raised-button" color="warn">
+                                <mat-icon>print</mat-icon>
+                                In
+                            </button>
+                            <button mat-raised-button="mat-raised-button" color="warn">
+                                <mat-icon>search</mat-icon>Tìm kiếm
+                            </button>
+                            <button mat-raised-button="mat-raised-button" color="warn" [routerLink]="['/']">
+                                <mat-icon>exit_to_app</mat-icon>
+                                Thoát
+                            </button>  
+                        </mat-toolbar>
+                        <div class="title pb-2 pt-2">Danh sách :</div>
+                        <div class="scroll-table">
+                            <div class="table-data">
+                                <table class="table table-hover">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th scope="col">Mã loại phí</th>
+                                            <th scope="col">Tên loại phí</th>
+                                            <th scope="col">Kí hiệu</th>
+                                            <th scope="col">Hàng hóa</th>
+                                            <th scope="col">Loại phí BHYT</th>    
+                                            <th scope="col"></th>                                          
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of dataSource" >
+                                            <td (click)="editFeeTypeItem(item.ItemFeeTypeID)">{{item.ItemFeeTypeID}}</td>
+                                            <td (click)="editFeeTypeItem(item.ItemFeeTypeID)">{{item.ItemFeeTypeName}}</td>
+                                            <td (click)="editFeeTypeItem(item.ItemFeeTypeID)">{{item.EnumName}}</td>
+                                            <td (click)="editFeeTypeItem(item.ItemFeeTypeID)">{{item.IsInstock}}</td>
+                                            <td (click)="editFeeTypeItem(item.ItemFeeTypeID)">{{item.ItemFeeTypeInsID}}</td>               
+                                            <td>
+                                                <button
+                                                    type="button"
+                                                    mat-raised-button="mat-raised-button"
+                                                    color="warn"
+                                                    (click)="onDelete(item.ItemFeeTypeID)">
+                                                    <mat-icon>delete</mat-icon>Xóa
+                                                </button>   
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent"></div>
+            </div>
+        </div>
+    </div>
+</section>

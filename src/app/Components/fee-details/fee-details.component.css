@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.form-details {
+    position: relative;
+}
+
+fieldset.scheduler-border {
+    border: solid 1px #DDD !important;
+    padding: 0 10px 10px;
+    border-bottom: none;
+    background: #E0FFFF;
+}
+legend.scheduler-border {
+    width: auto !important;
+    border: none;
+    font-size: 18px;
+}
+
+.form-details .btn-close {
+    position: absolute;
+    content: '';
+    top: -24px;
+    right: -24px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 10px transparent;
+    outline: 0;
+    border: none;
+    transition: 0.4s;
+}
+.form-details .btn-close:hover {
+    background: #E81123;
+    color: #fff;
+}
+.form-details .btn-close .mat-icon {
+    line-height: 40px !important
+}
+.form-details h3 {
+    font-size: 27px;
+    font-family: 'Roboto', sans-serif;
+    color: #FF3264;
+    padding: 25px 0;
+    text-transform: uppercase;
+}
+
+.button-tab {
+    border: 1px solid #646464;
+    height: 40px;
+    line-height: 38px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    margin: 10px 0;
+}
+
+.button-tab button {
+    margin: 0 8px;
+    transition: 0.3s;
+    font-size: 14px;
+    width: 85px;
+    line-height: 32px;
+}
+.form-details input[type="text"]{
+    padding-left: 4px;
+}
+
+span.badge.badge-danger.ng-star-inserted {
+    position: absolute;
+    top: 148px;
+    left: 100px;
+    width: 157px;
+}

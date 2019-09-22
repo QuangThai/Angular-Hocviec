@@ -1,0 +1,110 @@
+section {
+    padding: 0;
+}
+
+.row {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+section .section-title {
+    text-align: center;
+    color: #010508;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #dee2e6;
+    margin-left: 25px;
+}
+
+#tabs {
+    background: #f8f9fa;
+    color: #eee;
+    overflow-x: hidden;
+}
+
+#tabs .title {
+    color: #757575;
+    margin-left: 25px;
+    font-weight: 600;
+}
+
+#tabs h6.section-title {
+    color: #eee;
+}
+
+#tabs .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    color: #0e0e0e;
+    background-color: transparent;
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 4px solid !important;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#tabs .nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    color: #0e0e0e;
+    font-size: 14px;
+}
+
+.toolbarNav {
+    width: 100%;
+}
+
+.toolbarNav button {
+    margin: 0 8px;
+    transition: 0.3s;
+    outline: 0;
+}
+.toolbarNav input[type="text"] {
+    width: 450px;
+    height: 35px;
+}
+
+.mat-raised-button {
+    line-height: 34px;
+    padding: 0 10px;
+}
+
+.scroll-table {
+    height: 75vh;
+    overflow: auto;
+    display: block;
+}
+
+.table-data {
+    padding-left: 25px;
+}
+
+.table th {
+    font-size: 14px;
+    color: #757575;
+    background: transparent;
+    /* text-align: left */
+}
+
+.table td {
+    background: transparent;
+    color: #262626;
+    font-size: 13px;
+    cursor: pointer;
+    vertical-align: middle;
+    /* text-align: left */
+}
+.table th:nth-child(1) {
+    text-align: center
+}
+.table td:nth-child(1) {
+    text-align: center;
+}
+
+.py-3 {
+    padding-top: 0 !important;
+}

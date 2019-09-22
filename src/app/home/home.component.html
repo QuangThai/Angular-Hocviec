@@ -1,0 +1,118 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <span class="navbar-brand"
+    >Trung tâm y tế Hương Thủy - Huế
+    <span style="font-size: 16px; font-weight: normal; font-style: oblique;"
+      >(Tài khoản: {{ currentUser.username }})</span
+    ></span
+  >
+  <button
+    class="btn btn-outline-success my-2 my-sm-0"
+    type="submit"
+    (click)="logout()"
+  >
+    Đăng xuất
+  </button>
+</nav>
+<div class="wrapper">
+  <!-- Sidebar -->
+  <div id="sidebar" [class.active]="isActive">
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+        <button mat-icon-button disabled></button>
+        <a routerLink="{{ getUrlRouter(node.item) }}">{{
+          getItemName(node.item)
+        }}</a>
+      </mat-tree-node>
+      <mat-tree-node
+        *matTreeNodeDef="let node; when: hasChild"
+        matTreeNodePadding
+      >
+        <button
+          mat-icon-button
+          [attr.aria-label]="'toggle ' + node.filename"
+          (click)="loadChildren(node)"
+          matTreeNodeToggle
+        >
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{ treeControl.isExpanded(node) ? "expand_more" : "chevron_right" }}
+          </mat-icon>
+        </button>
+        {{ node.item }}
+      </mat-tree-node>
+      <mat-tree-node *matTreeNodeDef="let node; when: isLoadMore">
+        <button mat-button (click)="loadMore(node.loadMoreParentItem)">
+          Load more...
+        </button>
+      </mat-tree-node>
+    </mat-tree>
+  </div>
+
+  <!-- Page Content -->
+  <div id="content">
+    <mat-icon id="#sidebarCollapse" (click)="isActive = !isActive"
+      >menu</mat-icon
+    >
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<!-- <mat-toolbar class="toolbarContent">
+  <mat-toolbar-row>
+    <span>AulacEms - Hệ thống quản lý bệnh viện</span>
+    <span class="example-spacer"></span>
+    <mat-icon aria-hidden="false" aria-label="Example heart icon"
+      >face</mat-icon
+    >
+    <span style="font-weight: bold; font-size: 14px;">{{
+      currentUser.username
+    }}</span>
+    <button
+      mat-button
+      (click)="logout()"
+      style="font-weight: bold; font-size: 14px; margin-left: 3px;"
+    >
+      <mat-icon aria-hidden="false" aria-label="Example delete icon"
+        >delete</mat-icon
+      >Đăng xuất!
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+        <button mat-icon-button disabled></button>
+        <a routerLink="{{ getUrlRouter(node.item) }}">{{
+          getItemName(node.item)
+        }}</a>
+      </mat-tree-node>
+      <mat-tree-node
+        *matTreeNodeDef="let node; when: hasChild"
+        matTreeNodePadding
+      >
+        <button
+          mat-icon-button
+          [attr.aria-label]="'toggle ' + node.filename"
+          (click)="loadChildren(node)"
+          matTreeNodeToggle
+        >
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{ treeControl.isExpanded(node) ? "expand_more" : "chevron_right" }}
+          </mat-icon>
+        </button>
+        {{ node.item }}
+      </mat-tree-node>
+      <mat-tree-node *matTreeNodeDef="let node; when: isLoadMore">
+        <button mat-button (click)="loadMore(node.loadMoreParentItem)">
+          Load more...
+        </button>
+      </mat-tree-node>
+    </mat-tree>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+    <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+    <div style="display: block;">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</mat-drawer-container> -->
