@@ -52,7 +52,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let item of dataSource" >
+                                        <tr *ngFor="let item of allDataSource" >
                                             <td (click)="editFeeTypeItem(item.ItemFeeTypeID)">{{item.ItemFeeTypeID}}</td>
                                             <td (click)="editFeeTypeItem(item.ItemFeeTypeID)">{{item.ItemFeeTypeName}}</td>
                                             <td (click)="editFeeTypeItem(item.ItemFeeTypeID)">{{item.EnumName}}</td>
